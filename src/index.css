@@ -1,0 +1,8 @@
+@import "tailwindcss";
+body {
+  font-family: monospace, 'font-mono', 'Courier New', Courier, monospace;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  
