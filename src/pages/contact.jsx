@@ -41,17 +41,16 @@ const Contact = () => {
     setLoading(true); 
     console.log(formdata);
     
-    // http://localhost:3000/contact
     
+    //https://my-project-portfolio-backend-production.up.railway.app/contact
   try{
-      const res = await fetch("https://my-project-portfolio-backend-production.up.railway.app/contact", { method: "POST", headers:{ "Content-Type" : "application/json", }, body: JSON.stringify(formdata)});
+      const res = await fetch("https://my-project-portfolio-backend-production.up.railway.app/contact" , { method: "POST", headers:{ "Content-Type" : "application/json", }, body: JSON.stringify(formdata)});
       if(res.ok){
         setFormdata({name:"",email:"",message:""});
         setLoading(false);
         setOpen(true);
       }
     }
-    
     catch(error){
       alert("Something went wrong. Please try again.");
       console.log(error);
