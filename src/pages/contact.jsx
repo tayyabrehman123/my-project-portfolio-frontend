@@ -9,6 +9,8 @@ import Modal from '@mui/material/Modal';
 
 const Contact = () => {
   
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
+  
   const [open, setOpen] = useState(false);
   
   const [loading, setLoading ] = useState(false);
@@ -42,7 +44,7 @@ const Contact = () => {
     console.log(formdata);
     
   try{
-      const res = await fetch("http://localhost:3000/contact" , { method: "POST", headers:{ "Content-Type" : "application/json", }, body: JSON.stringify(formdata)});
+      const res = await fetch(`${API_URL}/contact` , { method: "POST", headers:{ "Content-Type" : "application/json", }, body: JSON.stringify(formdata)});
       if(res.ok){
         setFormdata({name:"",email:"",message:""});
         setLoading(false);
