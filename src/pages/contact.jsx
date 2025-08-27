@@ -41,10 +41,8 @@ const Contact = () => {
     setLoading(true); 
     console.log(formdata);
     
-    
-    //https://my-project-portfolio-backend-production.up.railway.app/contact
   try{
-      const res = await fetch("https://my-project-portfolio-backend-production.up.railway.app/contact" , { method: "POST", headers:{ "Content-Type" : "application/json", }, body: JSON.stringify(formdata)});
+      const res = await fetch("http://localhost:3000/contact" , { method: "POST", headers:{ "Content-Type" : "application/json", }, body: JSON.stringify(formdata)});
       if(res.ok){
         setFormdata({name:"",email:"",message:""});
         setLoading(false);
