@@ -1,6 +1,5 @@
 import React from "react";
-//import Spline from "@splinetool/react-spline";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //import { TbMassage } from "react-icons/tb";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -10,6 +9,72 @@ import Modal from '@mui/material/Modal';
 const Contact = () => {
   
   const API_URL = import.meta.env.VITE_BACKEND_URL;
+  
+  useEffect(() => {
+    console.log('Initializing particles...');
+    
+    // Wait a bit for the script to load
+    const timer = setTimeout(() => {
+      if (window.particlesJS) {
+        console.log('particlesJS available, loading config...');
+        
+        // Load the JSON config file
+        fetch('/particlesjs-config.json')
+          .then(response => response.json())
+          .then(config => {
+            console.log('Config loaded, initializing particles...');
+            window.particlesJS('particles-js', config);
+            console.log('Particles initialized successfully');
+          })
+          .catch(error => {
+            console.error('Error loading particles config:', error);
+            // Fallback to basic config if JSON fails
+            window.particlesJS('particles-js', {
+              "particles": {
+                "number": { "value": 80 },
+                "color": { "value": "#5b29b6" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3 },
+                "line_linked": {
+                  "enable": true,
+                  "distance": 150,
+                  "color": "#5a1f84",
+                  "opacity": 0.4,
+                  "width": 1
+                },
+                "move": {
+                  "enable": true,
+                  "speed": 6,
+                  "direction": "none",
+                  "random": false,
+                  "straight": false,
+                  "out_mode": "out"
+                }
+              },
+              "interactivity": {
+                "events": {
+                  "onhover": { "enable": true, "mode": "repulse" },
+                  "onclick": { "enable": true, "mode": "push" },
+                  "resize": true
+                },
+                "modes": {
+                  "repulse": { "distance": 150, "duration": 0.4 },
+                  "push": { "particles_nb": 4 }
+                }
+              },
+              "retina_detect": true
+            });
+          });
+      } else {
+        console.error('particlesJS not available after timeout');
+      }
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
   
   const [open, setOpen] = useState(false);
   
@@ -62,13 +127,10 @@ const Contact = () => {
   
   
   return (
-    <div id="contacts" className="relative w-full min-h-[90vh] flex items-center justify-center bg-gray-100 overflow-hidden ">
-      <img className="absolute top-0 left-0 object-cover w-full h-full z-0" src="https://www.crankbrothers.com/cdn/shop/files/Product_Help_Image_1944x.webp?v=1656023684" alt="" />
+    <div id="contacts" className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-black">
+      {/* Particles.js container */}
+      <div id="particles-js" className="absolute inset-0 z-0 h-full w-full"></div>
       
-      {/* Spline Animation Background */}
-      {/* <div className="absolute inset-0 w-full h-full z-0 pointer-events-auto">
-        <Spline scene="https://prod.spline.design/KDl1WYdVaM6xRuO9/scene.splinecode" />
-      </div> */}
       {/* Contact Card */}
       <div className="relative z-10 bg-neutral-900 bg-opacity-90 p-8 rounded-2xl shadow-lg max-w-md w-full text-center my-40">
         <h2 className="mb-2 text-3xl font-bold text-white">Contact Me</h2>

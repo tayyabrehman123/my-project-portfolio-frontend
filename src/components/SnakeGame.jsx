@@ -40,7 +40,7 @@ const SnakeGame = () => {
     ctx.fillRect(food.x * box, food.y * box, box, box);
 
     snake.forEach((part, index) => {
-      ctx.fillStyle = index === 0 ? "lime" : "green";
+      ctx.fillStyle = index === 0 ? "#7e22ce" : "violet"; // tailwind purple-700 hex
       ctx.fillRect(part.x * box, part.y * box, box, box);
     });
 
@@ -102,11 +102,11 @@ const SnakeGame = () => {
       />
       <div className="mt-4 text-white text-lg">Score: {score}</div>
       {gameOver && (
-        <div className="mt-2">
+        <div className="mt-2 text-center">
           <p className="text-red-400">Game Over!</p>
           <button
             onClick={restart}
-            className="mt-2 px-4 py-2 bg-green-500 hover:bg-green-600 rounded"
+            className="mt-2 px-4 py-2 text-white bg-purple-700 hover:bg-purple-800 rounded"
           >
             Restart
           </button>

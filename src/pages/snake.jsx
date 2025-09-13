@@ -10,7 +10,7 @@ function snake() {
         <p className="mb-10 text-white text-center">
           A fun little game I built using <span className="text-purple-700">React + Tailwind + JavaScript + Canvas</span>.
         </p>
-        <div className='bg-black w-full h-auto flex items-center justify-center'>
+        <div className='w-full h-auto flex items-center justify-center'>
         <SnakeGame/>
         </div>
     </div>

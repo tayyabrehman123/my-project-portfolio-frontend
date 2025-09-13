@@ -1,7 +1,7 @@
 import React from 'react';
 // import Spline from '@splinetool/react-spline';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaNodeJs, FaMobileAlt } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiFirebase } from "react-icons/si";
+import { SiExpress, SiMongodb, SiFirebase , SiInsomnia } from "react-icons/si";
 import './pages.css';
 
 const skills = [
@@ -14,6 +14,7 @@ const skills = [
   { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
   { name: "Express", icon: <SiExpress className="text-gray-300" /> },
   { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+  { name: "Insomnia", icon: <SiInsomnia className="text-purple-500" /> },
   //{ name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
 ];
 

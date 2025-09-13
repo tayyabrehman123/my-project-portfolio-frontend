@@ -29,7 +29,7 @@ const Navbar = () => {
         </a>
         {/* Hamburger for mobile */}
         <button
-          className="md:hidden flex items-center px-3 py-2 border rounded text-gray-400 border-gray-700 hover:text-white hover:border-white"
+          className="md:hidden flex items-center px-3 py-2 text-gray-400 border-gray-700 hover:text-white hover:border-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

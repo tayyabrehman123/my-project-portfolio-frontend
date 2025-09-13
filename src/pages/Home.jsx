@@ -38,9 +38,9 @@ const Home = () => {
         muted
         playsInline = {true}
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex flex-col items-center justify-center">
-        <h1 className="text-white text-6xl font-extrabold }">{text}</h1>
-        <div className="flex space-x-6 pt-6 font-semibold text-white">
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex flex-col items-center justify-center px-4">
+        <h1 className="text-white text-2xl sm:text-4xl md:text-4xl lg:text-6xl font-extrabold">{text}</h1>
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6 font-semibold w-full sm:w-auto justify-center items-center text-white">
         <button onClick={() => links('projects')} className="rounded-md px-6 py-3 cursor-pointer bg-purple-700 hover:bg-purple-500 shadow-lg transition transform hover:scale-105 duration-300">
           View My Work
         </button>
