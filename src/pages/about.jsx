@@ -4,18 +4,18 @@ import { motion } from "motion/react";
 
 const about = () => {
   return (
-    <div id='about' className="w-full h-full min-h-screen bg-black flex items-center justify-center flex-col space-y-7 text-center px-10">
+    <div id='about' className="w-full h-full min-h-screen bg-black flex items-center justify-center flex-col space-y-7 text-center px-10 overflow-x-hidden">
       <motion.h1 initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.6 }}
+        transition={{ duration: 1 }}
         viewport={{ once: true }} className='text-white font-extrabold text-3xl sm:text-3xl md:text-5xl pt-20'>
         About me
         </motion.h1>
         
       <div className="max-w-8xl w-full grid grid-cols-1 md:grid-cols-3 gap-5 items-center bg-black rounded-xl shadow-xl p-6 sm:p-9 mb-10">
-        <motion.div initial={{ opacity: 0, x: -600 }}
+        <motion.div initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.6 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }} className="md:col-span-1" >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-700 mb-6">Hi👋 I'm Tayyab Rehman</h1>
           <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
@@ -24,7 +24,7 @@ const about = () => {
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.6 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }} className= "md:col-span-1 flex justify-center hover:scale-105 duration-300">
           <img
             src={myPhoto}
@@ -33,9 +33,9 @@ const about = () => {
           />
         </motion.div>
         
-        <motion.div initial={{ opacity: 0, x: 600 }}
+        <motion.div initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.6 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }} className= "md:col-span-1">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-700 mb-6">💻Tech Stack</h2>
   <ul className="text-gray-500 text-base sm:text-lg space-y-2 list-disc list-inside">
