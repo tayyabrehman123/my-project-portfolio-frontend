@@ -29,9 +29,9 @@ const Home = () => {
   };
   
   return (
-    <div id="home" className=" w-full h-screen overflow-hidden relative">
+    <div id="home" className=" w-full h-screen relative">
       <video
-        className="w-full h-full object-cover"
+        className="fixed top-0 left-0 w-full h-full object-cover -z-10"
         src={myVideo}
         autoPlay
         loop
